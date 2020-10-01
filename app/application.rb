@@ -5,8 +5,7 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/items/)
-      search_term = req.params["q"]
-      binding.pry
+      
       if @@items.include?(search_term)
         resp.write "#{search_term.price}"
         resp.status = 200
