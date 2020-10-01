@@ -6,8 +6,8 @@ class Application
     
     if req.path.match(/items/)
       search_term = req.params["item"]
+      binding.pry
       if @@items.include?(search_term)
-        binding.pry
         resp.write "#{search_term.price}"
         resp.status = 200
       else 
